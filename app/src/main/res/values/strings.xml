@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gym Tracker</string>
+    <string name="logo_description">Logo Image</string>
+    <string name="new_training">NEW TRAINING</string>
+    <string name="training_history">TRAINING LOG</string>
+    <string name="my_results">RESULTS</string>
+    <string name="add_exercise">ADD EXERCISE</string>
+    <string name="new_training_textview">NEW TRAINING </string>
+</resources>
