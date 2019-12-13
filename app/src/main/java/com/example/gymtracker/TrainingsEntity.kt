@@ -6,7 +6,7 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity
 data class TrainingsEntity(
-    @PrimaryKey val training_id : Int,
+    @PrimaryKey (autoGenerate = true) val training_id : Int,
     @ColumnInfo (name = "TIMESTAMP") val training_timestamp : String?,
     @ColumnInfo (name = "EXERCISE_ID") val exercise_id : Int
 )
