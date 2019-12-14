@@ -35,9 +35,9 @@ abstract class AppDatabase : RoomDatabase() {
                     "app_database"
                 )   .addCallback(DbCallback)
                     .build()
-/*
+
                 //Insert Case
-                val thread = Thread {
+                /*val thread = Thread {
                     var exerciseEntity = ExercisesEntity(1, "Pull-ups")
 
                     instance.exercisesDao().insertExercise(exerciseEntity)
@@ -49,8 +49,7 @@ abstract class AppDatabase : RoomDatabase() {
                         Log.i("Fetch Records", "Name:  : ${it.exercise_description}")
                     }
                 }
-                thread.start()
-*/
+                thread.start()*/
 
                 INSTANCE = instance
                 return instance
@@ -63,13 +62,18 @@ abstract class AppDatabase : RoomDatabase() {
                 databaseWriteExecutor.execute{
                     val dao = INSTANCE!!.exercisesDao()
 
-                    val exerciseEntity = ExercisesEntity(1, "Pull-ups")
+                    val exerciseEntity = ExercisesEntity(1, "Squat with barbell")
+                    val exerciseEntity2 = ExercisesEntity(2, "Bench press")
+                    val exerciseEntity3 = ExercisesEntity(3, "Dead lift")
+
+
                     dao.insertExercise(exerciseEntity)
+                    dao.insertExercise(exerciseEntity2)
+                    dao.insertExercise(exerciseEntity3)
                     Log.i("Fetch Records", "Id:  : ${exerciseEntity.exercise_id}")
                     Log.i("Fetch Records", "Name:  : ${exerciseEntity.exercise_description}")
                 }
             }
         }
-
     }
 }

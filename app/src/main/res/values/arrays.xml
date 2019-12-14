@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercises">
+        <item>Deadlift</item>
+        <item>Bench press</item>
+        <item>Barbell squat</item>
+        <item>Bent over row</item>
+        <item>Military press</item>
+    </string-array>
+</resources>

@@ -6,4 +6,7 @@
     <string name="my_results">RESULTS</string>
     <string name="add_exercise">ADD EXERCISE</string>
     <string name="new_training_textview">NEW TRAINING </string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="exercise_choice">Choose your exercise</string>
 </resources>
