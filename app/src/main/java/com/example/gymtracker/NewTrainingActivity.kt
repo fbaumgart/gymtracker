@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_newtraining.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class NewTraining : AppCompatActivity(){
+class NewTrainingActivity : AppCompatActivity(){
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

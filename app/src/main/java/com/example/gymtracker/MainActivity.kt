@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val newTrainingBtn: Button = findViewById(R.id.newTrainingButton)
         newTrainingBtn.setOnClickListener {
-            val intent = Intent(this, NewTraining::class.java)
+            val intent = Intent(this, NewTrainingActivity::class.java)
             startActivity(intent)
 
 
