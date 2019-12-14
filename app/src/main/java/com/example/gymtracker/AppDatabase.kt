@@ -9,6 +9,7 @@ import android.content.Context
 @Database(entities = arrayOf(TrainingsEntity::class), version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun trainingsDao(): TrainingsDao
+
     companion object {
         // Singleton prevents multiple instances of database opening at the
         // same time.
@@ -24,10 +25,11 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "word_database"
+                    "app_database"
                 ).build()
                 INSTANCE = instance
                 return instance
             }
         }
+    }
 }
