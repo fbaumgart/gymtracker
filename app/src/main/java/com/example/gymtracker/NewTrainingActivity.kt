@@ -36,6 +36,7 @@ class NewTrainingActivity : AppCompatActivity(){
                     array,
                     -1
                 ) { dialogInterface, i ->
+                    val choice = array[i]
                     dialogInterface.dismiss()
                 }
                 builder.setNeutralButton("Cancel") { dialog, which ->
@@ -45,7 +46,12 @@ class NewTrainingActivity : AppCompatActivity(){
 
                 val mDialog = builder.create()
                 mDialog.show()
+        }
 
+        val endTrainingBtn : Button = findViewById(R.id.endTrainingButton)
+        endTrainingBtn.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }
