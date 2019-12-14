@@ -1,9 +1,12 @@
 package com.example.gymtracker
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_newtraining.*
@@ -22,5 +25,27 @@ class NewTrainingActivity : AppCompatActivity(){
 
         var newTrainingDayTimeTextView : TextView = findViewById<TextView>(R.id.newTrainingDayTime)
         newTrainingDayTimeTextView.append("    " + formattedCurrentDateTime)
+
+        val addExerciseBtn : Button = findViewById(R.id.addExerciseButton)
+        addExerciseBtn.setOnClickListener{
+
+                val builder = AlertDialog.Builder(this)
+                val array: Array<String> = resources.getStringArray(R.array.exercises)
+
+                builder.setSingleChoiceItems(
+                    array,
+                    -1
+                ) { dialogInterface, i ->
+                    dialogInterface.dismiss()
+                }
+                builder.setNeutralButton("Cancel") { dialog, which ->
+                    // Do something when click the neutral button
+                    dialog.cancel()
+                }
+
+                val mDialog = builder.create()
+                mDialog.show()
+
+        }
     }
 }

@@ -38,6 +38,8 @@ class ExerciseChoiceDialog : DialogFragment() {
                     })
 
             builder.create()
+            builder.show()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
+
 }
