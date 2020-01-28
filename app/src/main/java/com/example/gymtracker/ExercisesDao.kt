@@ -7,7 +7,7 @@ import android.arch.persistence.room.Query
 @Dao
 interface ExercisesDao {
 
-    @Query("Select *  from ExercisesEntity")
+    @Query("Select *  from exercises")
     fun getAllExercises(): List<ExercisesEntity>
 
     @Insert
