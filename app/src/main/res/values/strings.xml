@@ -10,4 +10,7 @@
     <string name="ok">OK</string>
     <string name="exercise_choice">Choose your exercise</string>
     <string name="end_training">END TRAINING</string>
+    <string name="reps_label">Reps</string>
+    <string name="weight_label">Weight</string>
+    <string name="delete_exercise">Delete</string>
 </resources>

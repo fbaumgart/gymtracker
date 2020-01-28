@@ -22,7 +22,7 @@
         android:text="@string/add_exercise"
         android:id="@+id/addExerciseButton" />
     <ListView
-        android:id="@+id/exercisesListView"
+        android:id="@+id/newTrainingExercisesListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
