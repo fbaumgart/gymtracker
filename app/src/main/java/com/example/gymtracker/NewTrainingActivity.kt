@@ -27,28 +27,12 @@ class NewTrainingActivity : AppCompatActivity(){
         newTrainingDayTimeTextView.append("    " + formattedCurrentDateTime)
 
         val addExerciseBtn : Button = findViewById(R.id.addExerciseButton)
-        addExerciseBtn.setOnClickListener{
-
-                val builder = AlertDialog.Builder(this)
-                val array: Array<String> = resources.getStringArray(R.array.exercises)
-
-                builder.setSingleChoiceItems(
-                    array,
-                    -1
-                ) { dialogInterface, i ->
-                    val choice = array[i]
-                    dialogInterface.dismiss()
-                }
-                builder.setNeutralButton("Cancel") { dialog, which ->
-                    // Do something when click the neutral button
-                    dialog.cancel()
-                }
-
-                val mDialog = builder.create()
-                mDialog.show()
-        }
-
         val endTrainingBtn : Button = findViewById(R.id.endTrainingButton)
+
+        addExerciseBtn.setOnClickListener{
+            val intent = Intent(this, ExerciseChoiceActivity::class.java)
+            startActivity(intent)
+        }
         endTrainingBtn.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

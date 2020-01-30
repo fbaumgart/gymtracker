@@ -10,9 +10,9 @@ class ExerciseChoiceActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_exercises_list)
+        setContentView(R.layout.new_training_exercise_choice_listview)
         var listView: ListView = findViewById(R.id.exercisesListView)
-        listView.setOnClickListener()
+        listView.setOnClickListener(TODO("uzupełnić"))
 
     }
 }

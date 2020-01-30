@@ -6,10 +6,9 @@ import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
 
-@Database(entities = arrayOf(TrainingsEntity::class, ExercisesEntity::class), version = 1)
+@Database(entities = arrayOf(TrainingsEntity::class), version = 1)
     abstract class AppDatabase : RoomDatabase() {
     abstract fun trainingsDao(): TrainingsDao
-    abstract fun exercisesDao(): ExercisesDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null
