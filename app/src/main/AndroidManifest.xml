@@ -13,13 +13,14 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewTrainingActivity">
-
-        </activity>
+        <activity android:name=".NewTrainingActivity"/>
+        <activity android:name=".ExerciseChoiceActivity" />
+        <activity android:name=".ExerciseSetDetailsActivity"/>
     </application>
 
 </manifest>

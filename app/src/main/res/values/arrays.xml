@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="exercises">
+    <string-array
+        name="exercises">
         <item>Deadlift</item>
         <item>Bench press</item>
         <item>Barbell squat</item>
