@@ -19,7 +19,7 @@ import androidx.room.RoomDatabase
                 INSTANCE = Room.databaseBuilder(
                     ctx.getApplicationContext(),
                     AppDatabase::class.java,
-                    "AppDatabase"
+                    "AppDatabase.db"
                 )
                     .allowMainThreadQueries() // Does not scale very well!
                     .build()

@@ -15,7 +15,7 @@ class ExerciseChoiceActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.new_training_exercise_choice_listview)
         supportActionBar?.title = "Choose exercise"
-
+        val currentTrainingID :Int? = intent.getIntExtra("currentTrainingID", 0)
         val listView: ListView = findViewById(R.id.exercisesListView)
         val exercisesArray = resources.getStringArray(R.array.exercises)
         val adapter = ArrayAdapter<String>(this, R.layout.exercise_choice_single_exercise, exercisesArray)
@@ -24,6 +24,9 @@ class ExerciseChoiceActivity : AppCompatActivity(){
         listView.setOnItemClickListener { parent, view, position, id ->
             val exerciseName = adapter.getItem(position)
             val intent = Intent(this, ExerciseSetDetailsActivity::class.java)
+            if (currentTrainingID != 0) {
+                intent.putExtra("currentTrainingID", currentTrainingID)
+            }
             intent.putExtra("Exercise", exerciseName)
             startActivity(intent)
         }

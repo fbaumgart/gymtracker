@@ -20,10 +20,12 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         //initialize Room DB
-        val db = Room.databaseBuilder(
+        /*val db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java, "AppDatabase.db"
-        ).allowMainThreadQueries().build()
+        ).allowMainThreadQueries().build()*/
+
+        //val db = AppDatabase.getAppDatabase(applicationContext)
 
         val newTrainingBtn: Button = findViewById(R.id.newTrainingButton)
         val trainingHistoryBtn: Button = findViewById(R.id.trainingLogButton)
@@ -31,8 +33,6 @@ class MainActivity : AppCompatActivity(){
 
         newTrainingBtn.setOnClickListener {
             val intent = Intent(this, NewTrainingActivity::class.java)
-            var maxID = db.trainingsDao().getMaxTrainingID()
-            val newTrainingID = maxID + 1
             startActivity(intent)
         }
 
@@ -55,17 +55,19 @@ class MainActivity : AppCompatActivity(){
         //val formattedCurrentDateTime = currentDateTime.format(formatter)
 
         //Testing Database
-       // db.trainingsDao().insertTraining(TrainingsEntity(5, 10, formattedCurrentDateTime, 5, 10, "Deadlift"))
-       // val allTrainingsList = db.trainingsDao().getAllTrainings()
-       // allTrainingsList?.forEach{
-       //     println("Query result")
-       //     println(it)
-       // }
 
-        var maxID = db.trainingsDao().getMaxTrainingID()
-        println("MAX ID  ${maxID}")
+        //db.trainingsDao().insertTraining(TrainingsEntity(5, 10, formattedCurrentDateTime, 5, 10, "Deadlift"))
+        /*val allTrainingsList = db.trainingsDao().getAllTrainings()
+        allTrainingsList?.forEach{
+            println("Query result")
+            println(it)
+        }
+
+        var maxTrainingID = db.trainingsDao().getMaxTrainingID()
+        println("MAX Training ID  ${maxID}")
         val newTrainingID = maxID + 1
-        println("MAX ID  ${newTrainingID}")
+        println("MAX Training ID  ${newTrainingID}")*/
+
     }
 }
 

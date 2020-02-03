@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ListView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,13 @@ class NewTrainingActivity : AppCompatActivity() {
         val currentDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy    HH:mm")
         val formattedCurrentDateTime = currentDateTime.format(formatter)
+        val currentTrainingID :Int? = intent.getIntExtra("currentTrainingID", 0)
+
+        if (currentTrainingID != 0){
+            //val listView: ListView = findViewById(R.id.newTrainingExercisesListView)
+            println(currentTrainingID)
+            //TODO("if currentTrainingID has been passed from ExerciseChoiceActivity then display ListView with the records from db that has the same TRAINING_ID")
+        }
 
         var newTrainingDayTimeTextView: TextView = findViewById<TextView>(R.id.newTrainingDayTime)
         newTrainingDayTimeTextView.append("    " + formattedCurrentDateTime)
@@ -29,6 +37,9 @@ class NewTrainingActivity : AppCompatActivity() {
 
         addExerciseBtn.setOnClickListener {
             val intent = Intent(this, ExerciseChoiceActivity::class.java)
+            if (currentTrainingID != 0) {
+                intent.putExtra("currentTrainingID", currentTrainingID)
+            }
             startActivity(intent)
         }
         endTrainingBtn.setOnClickListener {
