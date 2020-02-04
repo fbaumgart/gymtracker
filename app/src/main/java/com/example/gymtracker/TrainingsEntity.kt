@@ -25,3 +25,9 @@ data class MaxTrainingID(
 data class MaxID(
     @ColumnInfo(name = "ID") val id: Int
 )
+
+data class ExercisesFromTraining(
+    @ColumnInfo (name = "EXERCISE_NAME") val exercise_name: String,
+    @ColumnInfo (name = "REPS") val reps: String,
+    @ColumnInfo (name = "WEIGHT") val weight: String
+)

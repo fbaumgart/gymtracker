@@ -17,6 +17,9 @@ interface TrainingsDao {
     @Query("Select MAX(ID) AS MAX_ID from trainings")
     fun getMaxID(): Int
 
+    @Query("Select EXERCISE_NAME, REPS, WEIGHT from trainings WHERE TRAINING_ID = :trainingID")
+    fun getExercisesFromTraining(trainingID : Int) : List<ExercisesFromTraining>
+
     @Insert
     fun insertTraining(training: TrainingsEntity)
 

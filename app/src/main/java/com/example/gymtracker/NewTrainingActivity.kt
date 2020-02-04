@@ -3,6 +3,7 @@ package com.example.gymtracker
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
@@ -21,12 +22,20 @@ class NewTrainingActivity : AppCompatActivity() {
         val currentDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy    HH:mm")
         val formattedCurrentDateTime = currentDateTime.format(formatter)
-        val currentTrainingID :Int? = intent.getIntExtra("currentTrainingID", 0)
+        val currentTrainingID: Int = intent.getIntExtra("currentTrainingID", 0)
+        val listView: ListView = findViewById(R.id.newTrainingExercisesListView)
 
-        if (currentTrainingID != 0){
-            //val listView: ListView = findViewById(R.id.newTrainingExercisesListView)
+        if (currentTrainingID != 0) {
             println(currentTrainingID)
             //TODO("if currentTrainingID has been passed from ExerciseChoiceActivity then display ListView with the records from db that has the same TRAINING_ID")
+            val db = AppDatabase.getAppDatabase(applicationContext)
+            val exercisesToDisplay = db.trainingsDao().getExercisesFromTraining(currentTrainingID)
+            val exercisesArray = ArrayList(exercisesToDisplay)
+            exercisesArray.forEach{
+                println(it)
+            }
+            val adapter : ExercisesListAdapter = ExercisesListAdapter(this, R.layout.new_training_single_exercise_item, exercisesArray)
+            listView.adapter = adapter
         }
 
         var newTrainingDayTimeTextView: TextView = findViewById<TextView>(R.id.newTrainingDayTime)

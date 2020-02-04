@@ -33,7 +33,8 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
                 findViewById<EditText>(R.id.detailsRepsValue).text.toString().toInt()
             val weightValue: Int =
                 findViewById<EditText>(R.id.detailsWeightValue).text.toString().toInt()
-            var newTrainingID: Int
+            val newTrainingID: Int
+
             if (currentTrainingID != 0) {
                 newTrainingID = currentTrainingID
             } else
@@ -41,6 +42,7 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
                 val maxTrainingID = db.trainingsDao().getMaxTrainingID()
                 newTrainingID = maxTrainingID + 1
             }
+
             val maxID = db.trainingsDao().getMaxID()
             val newID = maxID + 1
             val currentDateTime = LocalDateTime.now()
@@ -56,11 +58,14 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
                     exerciseNameFromPreviousActivity
                 )
             )
+
             val intent = Intent(this, NewTrainingActivity::class.java)
             intent.putExtra("currentTrainingID", newTrainingID)
+
             if (currentTrainingID != 0) {
                 intent.putExtra("currentTrainingID", currentTrainingID)
             }
+
             startActivity(intent)
         }
     }
