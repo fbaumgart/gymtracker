@@ -18,11 +18,15 @@ interface TrainingsDao {
     @Query("Select MAX(ID) AS MAX_ID from trainings")
     fun getMaxID(): Int
 
-    @Query("Select ID, EXERCISE_NAME, REPS, WEIGHT from trainings WHERE TRAINING_ID = :trainingID")
+    @Query("Select ID, TRAINING_ID, EXERCISE_NAME, REPS, WEIGHT from trainings WHERE TRAINING_ID = :trainingID")
     fun getExercisesFromTraining(trainingID : Int) : List<ExercisesFromTraining>
 
     @Insert
     fun insertTraining(training: TrainingsEntity)
 
-    //TODO: Implement delete
+    @Query("Delete FROM trainings where ID = :id")
+    fun deleteExerciseFromTraining(id : Int)
+
+    @Query("Delete from trainings")
+    fun deleteAllEntries()
 }

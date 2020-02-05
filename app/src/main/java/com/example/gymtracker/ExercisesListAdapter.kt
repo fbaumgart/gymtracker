@@ -11,34 +11,40 @@ import android.widget.Button
 import android.widget.TextView
 import org.w3c.dom.Text
 
-class ExercisesListAdapter(context: Context, resource: Int, objects: ArrayList<ExercisesFromTraining>) :
+class ExercisesListAdapter(
+    context: Context,
+    resource: Int,
+    objects: ArrayList<ExercisesFromTraining>
+) :
     ArrayAdapter<ExercisesFromTraining>(context, resource, objects) {
 
     private val mResource = resource
     private val mContext = context
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val id : Int = getItem(position).id
-        val exerciseName : String = getItem(position).exercise_name
-        val reps : String = getItem(position).reps
-        val weight : String = getItem(position).weight
+        val id: Int = getItem(position).id
+        val training_id: Int = getItem(position).training_id
+        val exerciseName: String = getItem(position).exercise_name
+        val reps: String = getItem(position).reps
+        val weight: String = getItem(position).weight
 
-        val exerciseInstance = ExercisesFromTraining(id, exerciseName, reps, weight)
+        val exerciseInstance = ExercisesFromTraining(id, training_id, exerciseName, reps, weight)
         val inflater = LayoutInflater.from(mContext)
         val convertView = inflater.inflate(mResource, parent, false)
 
-        val exerciseNameTV : TextView = convertView.findViewById(R.id.trainingExerciseName)
-        val repsValueTV : TextView = convertView.findViewById(R.id.trainingRepsValue)
-        val weightValueTV : TextView = convertView.findViewById(R.id.trainingWeightValue)
-        val deleteButton : Button = convertView.findViewById(R.id.deleteExerciseButton)
+        val exerciseNameTV: TextView = convertView.findViewById(R.id.trainingExerciseName)
+        val repsValueTV: TextView = convertView.findViewById(R.id.trainingRepsValue)
+        val weightValueTV: TextView = convertView.findViewById(R.id.trainingWeightValue)
+        val deleteButton: Button = convertView.findViewById(R.id.deleteExerciseButton)
 
-        deleteButton.setOnClickListener{
+        deleteButton.setOnClickListener {
             println(id)
             val db = AppDatabase.getAppDatabase(context)
-            //TODO: Implement delete from database
+            db.trainingsDao().deleteExerciseFromTraining(id)
             notifyDataSetChanged()
             val intent = Intent(context, NewTrainingActivity::class.java)
-            Activity().startActivity(intent)
+            intent.putExtra("currentTrainingID", training_id)
+            context.startActivity(intent)
         }
 
 

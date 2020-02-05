@@ -27,7 +27,6 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
         val db = AppDatabase.getAppDatabase(applicationContext)
         val addExerciseBtn: Button = findViewById<Button>(R.id.detailsAddExerciseButton)
 
-
         addExerciseBtn.setOnClickListener {
             val repsValue: Int =
                 findViewById<EditText>(R.id.detailsRepsValue).text.toString().toInt()
@@ -37,8 +36,7 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
 
             if (currentTrainingID != 0) {
                 newTrainingID = currentTrainingID
-            } else
-            {
+            } else {
                 val maxTrainingID = db.trainingsDao().getMaxTrainingID()
                 newTrainingID = maxTrainingID + 1
             }

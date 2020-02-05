@@ -25,16 +25,20 @@ class NewTrainingActivity : AppCompatActivity() {
         val currentTrainingID: Int = intent.getIntExtra("currentTrainingID", 0)
         val listView: ListView = findViewById(R.id.newTrainingExercisesListView)
 
+        val db = AppDatabase.getAppDatabase(applicationContext)
+        db.trainingsDao().deleteAllEntries()
+
         if (currentTrainingID != 0) {
             println(currentTrainingID)
-            //TODO("if currentTrainingID has been passed from ExerciseChoiceActivity then display ListView with the records from db that has the same TRAINING_ID")
             val db = AppDatabase.getAppDatabase(applicationContext)
+            val allTrainings = db.trainingsDao().getAllTrainings()
             val exercisesToDisplay = db.trainingsDao().getExercisesFromTraining(currentTrainingID)
             val exercisesArray = ArrayList(exercisesToDisplay)
-            exercisesArray.forEach{
-                println(it)
-            }
-            val adapter : ExercisesListAdapter = ExercisesListAdapter(this, R.layout.new_training_single_exercise_item, exercisesArray)
+            val adapter: ExercisesListAdapter = ExercisesListAdapter(
+                this,
+                R.layout.new_training_single_exercise_item,
+                exercisesArray
+            )
             listView.adapter = adapter
         }
 
