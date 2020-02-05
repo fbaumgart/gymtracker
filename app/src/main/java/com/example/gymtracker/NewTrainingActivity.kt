@@ -25,8 +25,8 @@ class NewTrainingActivity : AppCompatActivity() {
         val currentTrainingID: Int = intent.getIntExtra("currentTrainingID", 0)
         val listView: ListView = findViewById(R.id.newTrainingExercisesListView)
 
-        val db = AppDatabase.getAppDatabase(applicationContext)
-        db.trainingsDao().deleteAllEntries()
+        //val db = AppDatabase.getAppDatabase(applicationContext)
+        //db.trainingsDao().deleteAllEntries()
 
         if (currentTrainingID != 0) {
             println(currentTrainingID)

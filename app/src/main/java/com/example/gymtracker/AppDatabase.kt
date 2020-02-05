@@ -7,7 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = arrayOf(TrainingsEntity::class), version = 1)
+@Database(entities = [TrainingsEntity::class], version = 1)
     abstract class AppDatabase : RoomDatabase() {
     abstract fun trainingsDao(): TrainingsDao
 
@@ -17,20 +17,18 @@ import androidx.room.RoomDatabase
         fun getAppDatabase(ctx: Context): AppDatabase {
             if (INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(
-                    ctx.getApplicationContext(),
+                    ctx.applicationContext,
                     AppDatabase::class.java,
                     "AppDatabase.db"
                 )
                     .allowMainThreadQueries() // Does not scale very well!
                     .build()
             }
-
             return INSTANCE as AppDatabase
         }
-
-        fun destroyInstance() {
-            INSTANCE = null
-        }
+        //fun destroyInstance() {
+        //    INSTANCE = null
+       // }
     }
 
 }

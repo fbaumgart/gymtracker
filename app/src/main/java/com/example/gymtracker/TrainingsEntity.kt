@@ -18,13 +18,13 @@ data class TrainingsEntity(
     @ColumnInfo (name = "EXERCISE_NAME") val exercise_name : String
 ):Parcelable
 
-data class MaxTrainingID(
+/*data class MaxTrainingID(
     @ColumnInfo(name = "MAX_TRAINING_ID") val training_id: Int
 )
 
 data class MaxID(
     @ColumnInfo(name = "ID") val id: Int
-)
+)*/
 
 data class ExercisesFromTraining(
     @ColumnInfo (name = "ID") val id : Int,

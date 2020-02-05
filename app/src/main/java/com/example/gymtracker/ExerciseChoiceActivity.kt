@@ -21,7 +21,7 @@ class ExerciseChoiceActivity : AppCompatActivity(){
         val adapter = ArrayAdapter<String>(this, R.layout.exercise_choice_single_exercise, exercisesArray)
         listView.adapter = adapter
 
-        listView.setOnItemClickListener { parent, view, position, id ->
+        listView.setOnItemClickListener { _, _, position, _ ->
             val exerciseName = adapter.getItem(position)
             val intent = Intent(this, ExerciseSetDetailsActivity::class.java)
             if (currentTrainingID != 0) {

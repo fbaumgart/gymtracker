@@ -1,6 +1,6 @@
 package com.example.gymtracker
 
-import android.app.Activity
+
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
-import org.w3c.dom.Text
+
 
 class ExercisesListAdapter(
     context: Context,
@@ -23,12 +23,12 @@ class ExercisesListAdapter(
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val id: Int = getItem(position).id
-        val training_id: Int = getItem(position).training_id
+        val trainingId: Int = getItem(position).training_id
         val exerciseName: String = getItem(position).exercise_name
         val reps: String = getItem(position).reps
         val weight: String = getItem(position).weight
 
-        val exerciseInstance = ExercisesFromTraining(id, training_id, exerciseName, reps, weight)
+        //val exerciseInstance = ExercisesFromTraining(id, trainingId, exerciseName, reps, weight)
         val inflater = LayoutInflater.from(mContext)
         val convertView = inflater.inflate(mResource, parent, false)
 
@@ -43,14 +43,13 @@ class ExercisesListAdapter(
             db.trainingsDao().deleteExerciseFromTraining(id)
             notifyDataSetChanged()
             val intent = Intent(context, NewTrainingActivity::class.java)
-            intent.putExtra("currentTrainingID", training_id)
+            intent.putExtra("currentTrainingID", trainingId)
             context.startActivity(intent)
         }
 
-
-        exerciseNameTV.setText(exerciseName)
-        repsValueTV.setText(reps)
-        weightValueTV.setText(weight)
+        exerciseNameTV.text = exerciseName
+        repsValueTV.text = reps
+        weightValueTV.text = weight
 
         return convertView
     }
