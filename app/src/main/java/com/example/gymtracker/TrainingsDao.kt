@@ -21,6 +21,9 @@ interface TrainingsDao {
     @Query("Select ID, TRAINING_ID, EXERCISE_NAME, REPS, WEIGHT from trainings WHERE TRAINING_ID = :trainingID")
     fun getExercisesFromTraining(trainingID : Int) : List<ExercisesFromTraining>
 
+    @Query("Select TRAINING_ID, DATE, TIME from trainings where DATE IS NOT NULL AND TIME IS NOT NULL")
+    fun getDistinctTrainings(): List<DistinctTrainingsList>
+
     @Insert
     fun insertTraining(training: TrainingsEntity)
 

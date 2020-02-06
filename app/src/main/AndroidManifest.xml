@@ -20,6 +20,7 @@
         <activity android:name=".NewTrainingActivity"/>
         <activity android:name=".ExerciseChoiceActivity" />
         <activity android:name=".ExerciseSetDetailsActivity"/>
+        <activity android:name=".TrainingsHistoryActivity"/>
     </application>
 
 </manifest>

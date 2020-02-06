@@ -12,7 +12,8 @@ import kotlinx.android.parcel.Parcelize
 data class TrainingsEntity(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "ID") val id : Int,
     @ColumnInfo (name = "TRAINING_ID") val training_id : Int,
-    @ColumnInfo (name = "TIMESTAMP") val training_timestamp : String,
+    @ColumnInfo (name = "DATE") val training_date : String?,
+    @ColumnInfo (name = "TIME") val training_time : String?,
     @ColumnInfo (name = "REPS") val reps : Int,
     @ColumnInfo (name = "WEIGHT") val weight : Int,
     @ColumnInfo (name = "EXERCISE_NAME") val exercise_name : String
@@ -32,4 +33,10 @@ data class ExercisesFromTraining(
     @ColumnInfo (name = "EXERCISE_NAME") val exercise_name: String,
     @ColumnInfo (name = "REPS") val reps: String,
     @ColumnInfo (name = "WEIGHT") val weight: String
+)
+
+data class DistinctTrainingsList(
+    @ColumnInfo (name = "TRAINING_ID") val training_id: Int,
+    @ColumnInfo (name = "DATE") val training_date : String,
+    @ColumnInfo (name = "TIME") val training_time : String
 )

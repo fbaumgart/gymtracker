@@ -25,13 +25,15 @@ class NewTrainingActivity : AppCompatActivity() {
         val currentTrainingID: Int = intent.getIntExtra("currentTrainingID", 0)
         val listView: ListView = findViewById(R.id.newTrainingExercisesListView)
 
-        //val db = AppDatabase.getAppDatabase(applicationContext)
+        val db = AppDatabase.getAppDatabase(applicationContext)
         //db.trainingsDao().deleteAllEntries()
+        val allTrainings = db.trainingsDao().getAllTrainings()
+        allTrainings.forEach{
+            println(it)
+        }
 
         if (currentTrainingID != 0) {
-            println(currentTrainingID)
             val db = AppDatabase.getAppDatabase(applicationContext)
-            val allTrainings = db.trainingsDao().getAllTrainings()
             val exercisesToDisplay = db.trainingsDao().getExercisesFromTraining(currentTrainingID)
             val exercisesArray = ArrayList(exercisesToDisplay)
             val adapter: ExercisesListAdapter = ExercisesListAdapter(

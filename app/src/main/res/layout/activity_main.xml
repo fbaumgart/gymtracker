@@ -28,7 +28,7 @@
         android:textSize="14sp"/>
 
     <Button
-        android:id="@+id/trainingLogButton"
+        android:id="@+id/trainingsHistoryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"

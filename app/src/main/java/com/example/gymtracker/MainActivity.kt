@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val newTrainingBtn: Button = findViewById(R.id.newTrainingButton)
-        val trainingHistoryBtn: Button = findViewById(R.id.trainingLogButton)
+        val trainingsHistoryBtn: Button = findViewById(R.id.trainingsHistoryButton)
         val resultsBtn: Button = findViewById(R.id.resultsButton)
 
         newTrainingBtn.setOnClickListener {
@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*
-        trainingHistoryBtn.setOnClickListener {
-            val intent = Intent(this, TODO("utworzyć i wpisać klasę")::class.java)
+
+        trainingsHistoryBtn.setOnClickListener {
+            val intent = Intent(this, TrainingsHistoryActivity::class.java)
             startActivity(intent)
         }
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, TODO("utworzyć i wpisać klasę")::class.java)
             startActivity(intent)
         }
-*/
+
     }
 }
 
