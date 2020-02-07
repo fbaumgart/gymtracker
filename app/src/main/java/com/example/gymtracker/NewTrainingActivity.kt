@@ -36,7 +36,7 @@ class NewTrainingActivity : AppCompatActivity() {
             val db = AppDatabase.getAppDatabase(applicationContext)
             val exercisesToDisplay = db.trainingsDao().getExercisesFromTraining(currentTrainingID)
             val exercisesArray = ArrayList(exercisesToDisplay)
-            val adapter: ExercisesListAdapter = ExercisesListAdapter(
+            val adapter = ExercisesListAdapter(
                 this,
                 R.layout.new_training_single_exercise_item,
                 exercisesArray

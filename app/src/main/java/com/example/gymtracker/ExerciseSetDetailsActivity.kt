@@ -42,8 +42,11 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
 
             if (currentTrainingID != 0) {
                 newTrainingID = currentTrainingID
-                formattedCurrentDate = null
-                formattedCurrentTime = null
+                val queryResult = db.trainingsDao().getExercisesFromTraining(currentTrainingID)
+                if (queryResult.isNotEmpty()){
+                    formattedCurrentDate = queryResult[0].training_date
+                    formattedCurrentTime = queryResult[0].training_time
+                }
             } else {
                 val maxTrainingID = db.trainingsDao().getMaxTrainingID()
                 newTrainingID = maxTrainingID + 1

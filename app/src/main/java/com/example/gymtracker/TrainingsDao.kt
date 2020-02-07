@@ -18,10 +18,10 @@ interface TrainingsDao {
     @Query("Select MAX(ID) AS MAX_ID from trainings")
     fun getMaxID(): Int
 
-    @Query("Select ID, TRAINING_ID, EXERCISE_NAME, REPS, WEIGHT from trainings WHERE TRAINING_ID = :trainingID")
+    @Query("Select ID, TRAINING_ID, EXERCISE_NAME, REPS, WEIGHT, TIME, DATE from trainings WHERE TRAINING_ID = :trainingID")
     fun getExercisesFromTraining(trainingID : Int) : List<ExercisesFromTraining>
 
-    @Query("Select TRAINING_ID, DATE, TIME from trainings where DATE IS NOT NULL AND TIME IS NOT NULL")
+    @Query("Select DISTINCT TRAINING_ID, DATE, TIME from trainings")
     fun getDistinctTrainings(): List<DistinctTrainingsList>
 
     @Insert

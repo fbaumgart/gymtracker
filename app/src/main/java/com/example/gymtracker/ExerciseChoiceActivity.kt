@@ -30,6 +30,5 @@ class ExerciseChoiceActivity : AppCompatActivity(){
             intent.putExtra("Exercise", exerciseName)
             startActivity(intent)
         }
-
     }
 }

@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/noTrainingsTextView"
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0"
+        android:textSize="25sp"
+        android:text="Currently there are no workouts to show"
+        android:visibility="gone"/>
     <ListView
         android:id="@+id/trainingsHistoryListView"
         android:layout_width="match_parent"

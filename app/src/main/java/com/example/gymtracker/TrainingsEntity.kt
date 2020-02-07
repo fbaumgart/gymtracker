@@ -32,7 +32,9 @@ data class ExercisesFromTraining(
     @ColumnInfo (name = "TRAINING_ID") val training_id: Int,
     @ColumnInfo (name = "EXERCISE_NAME") val exercise_name: String,
     @ColumnInfo (name = "REPS") val reps: String,
-    @ColumnInfo (name = "WEIGHT") val weight: String
+    @ColumnInfo (name = "WEIGHT") val weight: String,
+    @ColumnInfo (name = "DATE") val training_date : String?,
+    @ColumnInfo (name = "TIME") val training_time : String?
 )
 
 data class DistinctTrainingsList(

@@ -14,6 +14,14 @@ import com.example.gymtracker.AppDatabase as AppDatabase
 
 class MainActivity : AppCompatActivity() {
 
+    var pressCounter = 0
+    override fun onBackPressed() {
+        pressCounter += 1
+        if (pressCounter == 2){
+            finishAndRemoveTask()
+        }
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
