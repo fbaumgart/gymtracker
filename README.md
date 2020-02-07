@@ -3,10 +3,11 @@
 
 ## About
 GymTracker is a fitness app where you can save your workouts.
+
 Made for Android platform with Kotlin.
 
 
-##Technologies
+## Technologies
 Kotlin
 Room
 AndroidMPChart
