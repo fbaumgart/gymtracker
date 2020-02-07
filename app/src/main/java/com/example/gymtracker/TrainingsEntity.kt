@@ -42,3 +42,8 @@ data class DistinctTrainingsList(
     @ColumnInfo (name = "DATE") val training_date : String,
     @ColumnInfo (name = "TIME") val training_time : String
 )
+
+data class WeightsOrderedByDate(
+    @ColumnInfo (name = "WEIGHT") val weight: Int,
+    @ColumnInfo (name = "DATE") val training_date : String
+)

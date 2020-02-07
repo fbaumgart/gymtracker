@@ -18,7 +18,7 @@
         android:textAlignment="center"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="@string/add_exercise"
         android:id="@+id/addExerciseButton" />
     <ListView
@@ -29,7 +29,8 @@
         android:layout_weight="1"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="@string/end_training"
-        android:id="@+id/endTrainingButton"/>
+        android:id="@+id/endTrainingButton"
+        android:layout_marginBottom="20dp"/>
 </android.widget.LinearLayout>

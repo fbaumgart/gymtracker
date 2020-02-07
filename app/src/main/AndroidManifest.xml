@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gymtracker">
 
     <application
@@ -14,14 +13,26 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewTrainingActivity"/>
+        <activity
+            android:name=".NewTrainingActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".ExerciseChoiceActivity" />
-        <activity android:name=".ExerciseSetDetailsActivity"/>
-        <activity android:name=".TrainingsHistoryActivity"/>
-        <activity android:name=".SingleTrainingHistoryActivity"/>
+        <activity android:name=".ExerciseSetDetailsActivity" />
+        <activity
+            android:name=".TrainingsHistoryActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SingleTrainingHistoryActivity"
+            android:parentActivityName=".TrainingsHistoryActivity" />
+        <activity
+            android:name=".ResultsExercisesListActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ResultsGraphActivity"
+            android:parentActivityName=".ResultsExercisesListActivity"/>
     </application>
 
 </manifest>

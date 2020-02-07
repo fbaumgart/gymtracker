@@ -19,13 +19,14 @@ class ExerciseSetDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.exercise_choice_details)
         supportActionBar?.title = "Add exercise to training list"
 
+
         val exerciseNameFromPreviousActivity = intent.getStringExtra("Exercise")
         val currentTrainingID: Int = intent.getIntExtra("currentTrainingID", 0)
 
         val exerciseNameTextView = findViewById<TextView>(R.id.detailsExerciseName)
         exerciseNameTextView.text = exerciseNameFromPreviousActivity
         val db = AppDatabase.getAppDatabase(applicationContext)
-        val addExerciseBtn: Button = findViewById<Button>(R.id.detailsAddExerciseButton)
+        val addExerciseBtn: Button = findViewById(R.id.detailsAddExerciseButton)
 
         addExerciseBtn.setOnClickListener {
             val repsValue: Int =

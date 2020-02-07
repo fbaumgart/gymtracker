@@ -18,6 +18,7 @@ class NewTrainingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_newtraining)
         supportActionBar?.title = "New training"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val currentDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy    HH:mm")

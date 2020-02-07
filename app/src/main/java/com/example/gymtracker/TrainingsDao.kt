@@ -24,6 +24,12 @@ interface TrainingsDao {
     @Query("Select DISTINCT TRAINING_ID, DATE, TIME from trainings")
     fun getDistinctTrainings(): List<DistinctTrainingsList>
 
+    @Query("Select DISTINCT EXERCISE_NAME from trainings")
+    fun getAvailableExercises(): List<String>
+
+    @Query("Select DATE, WEIGHT from trainings WHERE EXERCISE_NAME = :exerciseName ORDER BY DATE")
+    fun getWeightsOrderedByDate(exerciseName : String): List<WeightsOrderedByDate>
+
     @Insert
     fun insertTraining(training: TrainingsEntity)
 

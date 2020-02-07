@@ -23,8 +23,8 @@ class TrainingsHistoryActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.noTrainingsTextView)
         val db = AppDatabase.getAppDatabase(applicationContext)
         val trainingsToDisplay = db.trainingsDao().getDistinctTrainings()
-        var trainingsArray : ArrayList<String> = ArrayList()
-        var trainingIDsArray : ArrayList<Int> = ArrayList()
+        val trainingsArray : ArrayList<String> = ArrayList()
+        val trainingIDsArray : ArrayList<Int> = ArrayList()
         trainingsToDisplay.forEach{
             val trainingID = it.training_id
             val trainingDate = it.training_date
