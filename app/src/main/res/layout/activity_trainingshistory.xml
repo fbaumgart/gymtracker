@@ -13,7 +13,7 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="0"
         android:textSize="25sp"
-        android:text="Currently there are no workouts to show"
+        android:text="@string/no_workouts_to_show"
         android:visibility="gone"/>
     <ListView
         android:id="@+id/trainingsHistoryListView"

@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Reps:"/>
+                android:text="@string/reps_label"/>
 
             <TextView
                 android:id="@+id/trainingRepsValue"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Weight:"/>
+                android:text="@string/weight_label"/>
 
             <TextView
                 android:id="@+id/trainingWeightValue"
@@ -58,6 +58,6 @@
         android:id="@+id/deleteExerciseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"/>
+        android:text="@string/delete_exercise"/>
 
 </LinearLayout>

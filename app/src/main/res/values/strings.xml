@@ -13,4 +13,5 @@
     <string name="reps_label">Reps:</string>
     <string name="weight_label">Weight:</string>
     <string name="delete_exercise">Delete</string>
+    <string name="no_workouts_to_show">Currently there are no workouts to show</string>
 </resources>

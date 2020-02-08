@@ -38,7 +38,6 @@ class ExercisesListAdapter(
         val deleteButton: Button = convertView.findViewById(R.id.deleteExerciseButton)
 
         deleteButton.setOnClickListener {
-            println(id)
             val db = AppDatabase.getAppDatabase(context)
             db.trainingsDao().deleteExerciseFromTraining(id)
             notifyDataSetChanged()
