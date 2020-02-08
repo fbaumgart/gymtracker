@@ -28,7 +28,6 @@ class SingleTrainingHistoryListAdapter(
         val reps: String = getItem(position).reps
         val weight: String = getItem(position).weight
 
-        //val exerciseInstance = ExercisesFromTraining(id, trainingId, exerciseName, reps, weight)
         val inflater = LayoutInflater.from(mContext)
         val convertView = inflater.inflate(mResource, parent, false)
 

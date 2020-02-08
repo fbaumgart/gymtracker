@@ -26,9 +26,6 @@ import androidx.room.RoomDatabase
             }
             return INSTANCE as AppDatabase
         }
-        //fun destroyInstance() {
-        //    INSTANCE = null
-       // }
     }
 
 }
